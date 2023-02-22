@@ -1,0 +1,10 @@
+.menuLink {
+  display: block;
+  color: black;
+  font-weight: bold;
+  padding: 1em;
+  text-decoration: none;
+}
+.menuLink:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}

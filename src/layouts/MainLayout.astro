@@ -1,0 +1,12 @@
+---
+import SideBar from "../components/SideBar.astro";
+
+import "../styles/MainLayout.css";
+---
+
+<main class="main">
+  <SideBar />
+  <div class="content">
+    <slot />
+  </div>
+</main>

@@ -1,0 +1,106 @@
+---
+const pageTitle = "Index Page";
+---
+
+<div>
+  <h2>モーダル01</h2>
+  <h3>イメージ</h3>
+  <div>
+    <div class="p-faqList">
+      <!-- 1 -->
+      <div class="p-faqList__item">
+        <div class="c-boxToggle">
+          <h3 class="c-boxToggle__trigger js-trigger">質問1</h3>
+          <div class="c-boxToggle__content js-toggleContent">
+            <p class="c-boxToggle__contentTxt">回答1</p>
+          </div>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="p-faqList__item">
+        <div class="c-boxToggle">
+          <h3 class="c-boxToggle__trigger js-trigger">質問2</h3>
+          <div class="c-boxToggle__content js-toggleContent">
+            <p class="c-boxToggle__contentTxt">回答2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--embed -->
+  <h3>コード</h3>
+  <p
+    class="codepen"
+    data-height="300"
+    data-default-tab="html,result"
+    data-slug-hash="xxpQRyV"
+    data-user="emi-jp"
+    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+  >
+    <span
+      >See the Pen <a href="https://codepen.io/emi-jp/pen/xxpQRyV">
+        アコーディオン（Vanilla JS）</a
+      > by emi (<a href="https://codepen.io/emi-jp">@emi-jp</a>) on <a
+        href="https://codepen.io">CodePen</a
+      >.</span
+    >
+  </p>
+  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const triggers = document.querySelectorAll(".js-trigger");
+
+      for (let i = 0; i < triggers.length; i++) {
+        let trigger = triggers[i];
+        let content = trigger.nextElementSibling;
+        trigger.addEventListener("click", () => {
+          trigger.classList.toggle("is-active");
+          content.classList.toggle("is-open");
+        });
+      }
+    });
+  </script>
+</div>
+
+<style lang="scss">
+  .p-faqList {
+    padding: 1em;
+    &__item {
+      &:not(:first-child) {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  .c-boxToggle {
+    padding: 1em;
+    background-color: #e9f2fc;
+    &__trigger {
+      cursor: pointer;
+      padding: 1em;
+      position: relative;
+    }
+    &__content {
+      line-height: 0;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition-duration: 0.3s;
+    }
+    // &__contentTxt{
+    //font-size: 1.6rem;
+    // }
+  }
+
+  .js-trigger.is-active {
+    color: blue;
+  }
+  .js-toggleContent.is-open {
+    padding: 1em;
+    line-height: normal;
+    height: auto;
+    opacity: 1;
+  }
+</style>
